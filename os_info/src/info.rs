@@ -31,6 +31,10 @@ pub struct Info {
     /// Operating system architecture in terms of how many bits compose the basic values it can deal
     /// with. See `Bitness` for details.
     pub(crate) bitness: Bitness,
+
+    // system model info
+    pub(crate) model: Option<String>,
+
 }
 
 impl Info {
@@ -55,6 +59,8 @@ impl Info {
             edition: None,
             codename: None,
             bitness: Bitness::Unknown,
+            model: None
+
         }
     }
 
@@ -146,6 +152,10 @@ impl Info {
     /// ```
     pub fn bitness(&self) -> Bitness {
         self.bitness
+    }
+    /// get system model info
+    pub fn model(&self) -> Option<&str> {
+        self.model.as_ref().map(String::as_ref)
     }
 }
 
@@ -298,6 +308,7 @@ mod tests {
                     edition: Some("edition".to_owned()),
                     codename: Some("codename".to_owned()),
                     bitness: Bitness::X64,
+                    model: None
                 },
                 "Mac OS 10.2.0 (edition) (codename) [64-bit]",
             ),

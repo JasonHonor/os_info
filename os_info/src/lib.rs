@@ -14,6 +14,10 @@
 #[path = "android/mod.rs"]
 mod imp;
 
+#[cfg(target_os = "android")]
+#[path = "android/system.rs"]
+mod system;
+
 #[cfg(target_os = "dragonfly")]
 #[path = "dragonfly/mod.rs"]
 mod imp;
