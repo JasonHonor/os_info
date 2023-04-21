@@ -160,6 +160,7 @@ impl Info {
     /// get system model info
     pub fn model(&self) -> Option<&str> {
         self.model.as_ref().map(String::as_ref)
+    }
 
     /// Returns operating system architecture.
     ///
