@@ -12,7 +12,7 @@
 
 **Project details:**
 [![LoC](https://tokei.rs/b1/github/stanislav-tkach/os_info)](https://github.com/stanislav-tkach/os_info)
-![Rust 1.41+ required](https://img.shields.io/badge/rust-1.41+-blue.svg?label=Required%20Rust)
+![Rust 1.60+ required](https://img.shields.io/badge/rust-1.41+-blue.svg?label=Required%20Rust)
 
 ## Overview
 
@@ -45,12 +45,13 @@ os_info = { version = "3", default-features = false }
 let info = os_info::get();
 
 // Print full information:
-println!("OS information: {}", info);
+println!("OS information: {info}");
 
 // Print information separately:
 println!("Type: {}", info.os_type());
 println!("Version: {}", info.version());
 println!("Bitness: {}", info.bitness());
+println!("Architecture: {}", info.architecture());
 ```
 
 ### Command line tool (`os_info_cli`)
@@ -78,10 +79,12 @@ os_info --help
 
 Right now, the following operating system types can be returned:
 
+- Alpaquita Linux
 - Alpine Linux
 - Amazon Linux AMI
 - Android
 - Arch Linux
+- Artix Linux
 - CentOS
 - Debian
 - DragonFly BSD
@@ -89,19 +92,23 @@ Right now, the following operating system types can be returned:
 - EndeavourOS
 - Fedora
 - FreeBSD
+- Garuda Linux
+- Gentoo Linux
 - HardenedBSD
+- Illumos
 - Linux
-- Linux Mint
 - macOS (Mac OS X or OS X)
 - Manjaro
+- Mariner
 - MidnightBSD
+- Mint
 - NetBSD
 - NixOS
 - OpenBSD
 - openSUSE
 - Oracle Linux
 - Pop!_OS
-- Raspberry OS
+- Raspberry Pi OS
 - Red Hat Linux
 - Red Hat Enterprise Linux
 - Redox

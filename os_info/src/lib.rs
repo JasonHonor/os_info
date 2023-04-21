@@ -30,6 +30,10 @@ mod imp;
 #[path = "freebsd/mod.rs"]
 mod imp;
 
+#[cfg(target_os = "illumos")]
+#[path = "illumos/mod.rs"]
+mod imp;
+
 #[cfg(target_os = "linux")]
 #[path = "linux/mod.rs"]
 mod imp;
@@ -59,6 +63,7 @@ mod imp;
     target_os = "dragonfly",
     target_os = "emscripten",
     target_os = "freebsd",
+    target_os = "illumos",
     target_os = "linux",
     target_os = "macos",
     target_os = "netbsd",
@@ -69,6 +74,13 @@ mod imp;
 #[path = "unknown/mod.rs"]
 mod imp;
 
+#[cfg(any(
+    target_os = "linux",
+    target_os = "macos",
+    target_os = "netbsd",
+    target_os = "openbsd"
+))]
+mod architecture;
 mod bitness;
 mod info;
 #[cfg(not(windows))]
@@ -77,6 +89,7 @@ mod os_type;
 #[cfg(any(
     target_os = "dragonfly",
     target_os = "freebsd",
+    target_os = "illumos",
     target_os = "netbsd",
     target_os = "openbsd"
 ))]
@@ -95,7 +108,7 @@ pub use crate::{bitness::Bitness, info::Info, os_type::Type, version::Version};
 /// let info = os_info::get();
 ///
 /// // Print full information:
-/// println!("OS information: {}", info);
+/// println!("OS information: {info}");
 ///
 /// // Print information separately:
 /// println!("Type: {}", info.os_type());
@@ -103,6 +116,7 @@ pub use crate::{bitness::Bitness, info::Info, os_type::Type, version::Version};
 /// println!("Edition: {:?}", info.edition());
 /// println!("Codename: {:?}", info.codename());
 /// println!("Bitness: {}", info.bitness());
+/// println!("Architecture: {:?}", info.architecture());
 /// ```
 pub fn get() -> Info {
     imp::current_platform()

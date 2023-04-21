@@ -4,6 +4,52 @@ All notable changes to this project will be documented in this file.
 
 ## [Unreleased]
 
+## [3.7.0] (2023-03-20)
+
+- Information about a processor's architecture has been added. (#336)
+
+- Mabox Linux support has been added. (#338)
+
+- Alpaquita Linux support has been added. (#340)
+
+- Artix Linux support has been added. (#342)
+
+## [3.6.0] (2023-01-30)
+
+- OpenCloudOS support has been added. (#328)
+
+- openEuler support has been added. (#328)
+
+- Arch Linux ARM and Debian ARM detection has been improved. (#331)
+
+## [3.5.1] (2022-09-19)
+
+- Windows 11 detection has been fixed. (#322)
+
+## [3.5.0] (2022-08-01)
+
+- Red Hat Enterprise Linux detection has been improved. (#311)
+
+- Garuda Linux support has been added. (#314)
+
+- The operating system detection from the release files has been improved. (#317)
+
+## [3.4.0] (2022-05-22)
+
+- Gentoo Linux support has been added. (#307)
+
+- FreeSBD detection has been fixed. (#309)
+
+## [3.3.0] (2022-05-01)
+
+- Fedora 35 (without `lsb_release`) detection has been fixed. (#293)
+
+- HardenedBSD support has been added. (#295)
+
+- Mariner support has been added. (#299)
+
+- Illumos support has been added. (#305)
+
 ## [3.2.0] (2022-02-04)
 
 - MidnightBSD support has been added. (#290)
@@ -245,7 +291,13 @@ All notable changes to this project will be documented in this file.
 
 The first release containing only minor infrastructural changes and based on [os_type](https://github.com/schultyy/os_type).
 
-[Unreleased]: https://github.com/stanislav-tkach/os_info/compare/v3.2.0...HEAD
+[Unreleased]: https://github.com/stanislav-tkach/os_info/compare/v3.7.0...HEAD
+[3.7.0]: https://github.com/stanislav-tkach/os_info/compare/v3.6.0...v3.7.0
+[3.6.0]: https://github.com/stanislav-tkach/os_info/compare/v3.5.1...v3.6.0
+[3.5.1]: https://github.com/stanislav-tkach/os_info/compare/v3.5.0...v3.5.1
+[3.5.0]: https://github.com/stanislav-tkach/os_info/compare/v3.4.0...v3.5.0
+[3.4.0]: https://github.com/stanislav-tkach/os_info/compare/v3.3.0...v3.4.0
+[3.3.0]: https://github.com/stanislav-tkach/os_info/compare/v3.2.0...v3.3.0
 [3.2.0]: https://github.com/stanislav-tkach/os_info/compare/v3.1.0...v3.2.0
 [3.1.0]: https://github.com/stanislav-tkach/os_info/compare/v3.0.9...v3.1.0
 [3.0.9]: https://github.com/stanislav-tkach/os_info/compare/v3.0.8...v3.0.9

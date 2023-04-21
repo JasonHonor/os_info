@@ -11,17 +11,18 @@ keywords = ["cli", "os", "os_type", "os_version", "os_info"]
 categories = ["command-line-interface", "os"]
 license = "MIT"
 edition = "2018"
+rust-version = "1.60"
 
 [[bin]]
 name = "os_info"
 path = "src/main.rs"
 
 [dependencies]
-os_info = { version = "3.2.0", default-features = false, path = "../os_info" }
+os_info = { version = "3.7.0", default-features = false, path = "../os_info" }
 log = "0.4.5"
-env_logger = "0.9"
-clap = { version = "3", features = ["derive"] }
+env_logger = "0.10"
+clap = { version = "4", features = ["derive"] }
 
 [dev-dependencies]
 assert_cmd = "2"
-predicates = "2"
+predicates = "3"
